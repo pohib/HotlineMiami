@@ -5,23 +5,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class PlayerAnimationController : CharacterAnimation
 {
-    Animator anim;
-    InventoryAndEquipment pwm;
-    public int wID = 0;
-    bool shoot;
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-        pwm = PlayerView.instance.Components.weaponManager;
-    }
-
-
     void Update()
     {
         AttackAnim();
     }
+
     void AttackAnim()
     {
 
@@ -58,12 +48,6 @@ public class PlayerAnimationController : MonoBehaviour
             }
 
         }
-    }
-
-    public void WeaponAnimation(ItemType wp)
-    { 
-        wID = (int)wp;
-        anim.SetInteger("wps", wID);
     }
 
     IEnumerator shooting(float r)

@@ -38,17 +38,18 @@ namespace AI
         {
             if(currentWeapon == null)
             {
-                currentWeapon = GameInstanceContainer.instance.itemsListConfig.GetItem(components.currentWeapon);
+                currentWeapon = GameInstanceContainer.instance.itemsListConfig.GetItem(components.config.currentWeapon);
+                components.characterAnimation.WeaponAnimation(currentWeapon.Type);
             }
 
             if (!followTarget)
             {
                 if (!rayScan.CheckViewSpace())
                 {
-                    if (components.isPatrol)
+                    if (components.config.isPatrol)
                     {
-                        components.agent.speed = components.walkSpeed;
-                        components.agent.stoppingDistance = components.defaultStopDistance;
+                        components.agent.speed = components.config.walkSpeed;
+                        components.agent.stoppingDistance = components.config.defaultStopDistance;
                         
                         if (Vector3.Distance(components.my_transform.position, components.path_points[path_ID].position) <= components.agent.stoppingDistance)
                         {
@@ -72,7 +73,7 @@ namespace AI
             }
 
             components.agent.stoppingDistance = currentWeapon.DistanceToAttack;
-            components.agent.speed = components.runSpeed;
+            components.agent.speed = components.config.runSpeed;
             checkDistance?.Invoke(rayScan.GetDistanceToTarget);
 
             return rayScan.target.position;

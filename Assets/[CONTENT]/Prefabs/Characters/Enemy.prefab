@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   components:
-    type: 0
+    config: {fileID: 11400000, guid: 507c2e70a5025ab479fe688d3125330d, type: 2}
     agent: {fileID: 6854045831826002171}
     path_points:
     - {fileID: 0}
@@ -60,11 +60,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     my_transform: {fileID: 8468094605270714558}
-    isPatrol: 1
-    walkSpeed: 1.5
-    runSpeed: 3.2
-    currentWeapon: {fileID: 1556122060822158449, guid: a58e98d71a51dc5478ed691985575fca, type: 3}
-    defaultStopDistance: 0.2
+    characterAnimation: {fileID: 3258060926133782335}
 --- !u!195 &6854045831826002171
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -119,6 +115,7 @@ GameObject:
   - component: {fileID: 3867304407018568777}
   - component: {fileID: 1781590885231245874}
   - component: {fileID: 7452184531257295945}
+  - component: {fileID: 3258060926133782335}
   m_Layer: 0
   m_Name: View
   m_TagString: Untagged
@@ -215,3 +212,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3258060926133782335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990799431834262143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700687fd719585341b6ec9e6c68775f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wID: 0

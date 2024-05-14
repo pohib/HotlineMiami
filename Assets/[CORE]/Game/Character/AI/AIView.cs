@@ -28,15 +28,11 @@ namespace AI
     [System.Serializable]
     public struct Components
     {
-        public AIType type;
+        public AIConfig config;
         public NavMeshAgent agent;
         public Transform[] path_points;
         public Transform my_transform;
-        public bool isPatrol;
-        public float walkSpeed;
-        public float runSpeed;
-        public ItemType currentWeapon;
-        public float defaultStopDistance;
+        public CharacterAnimation characterAnimation;
     }
 
     public enum AIType

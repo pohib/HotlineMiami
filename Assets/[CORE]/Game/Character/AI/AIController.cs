@@ -20,7 +20,7 @@ public class AIController : IBot
     {
         gameManager = _gameManager;
 
-        switch (view.components.type)
+        switch (view.components.config.type)
         {
             case AIType.Enemy:
                 

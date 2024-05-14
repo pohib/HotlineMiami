@@ -9,18 +9,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameUIContainer uIContainer;
 
     private PlayerController playerController;
-    private InventoryAndEquipment playerInventory;
     private GameAIController aIController;
 
     private void Start()
     {
         /*uiManager = new GameUIManager(uIContainer);
         uiManager.Init();*/
-        playerInventory = new(ItemType.Null);
         aIController = new GameAIController(gameContainer, this);
         aIController.Init();
         playerController = new PlayerController(gameContainer.GetPlayerView);
-        playerController.View.Init(playerInventory);
     }
 
     private void Update()
@@ -28,7 +25,6 @@ public class GameManager : MonoBehaviour
         playerController.Tick();
         //uiManager.Tick();
         aIController.Tick();
-        playerInventory.Tick();
     }
 
     public void Lose()
