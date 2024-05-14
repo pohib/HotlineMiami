@@ -35,7 +35,7 @@ namespace AI
         public bool isPatrol;
         public float walkSpeed;
         public float runSpeed;
-        public Item currentWeapon;
+        public ItemType currentWeapon;
         public float defaultStopDistance;
     }
 

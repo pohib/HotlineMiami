@@ -1,10 +1,12 @@
+using PLAYER;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Item : MonoBehaviour
 { 
-    public WeaponType wtype;
-    public float distanceToAttack;
+    public ItemType wtype;
+
+    public ItemConfig config {  get; private set; }
 
     private void Start()
     {
@@ -14,22 +16,22 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out PlayerWeaponManager player))
+        if(other.TryGetComponent(out PlayerView player))
         {
-            player.SetTriggeredItem(this);
+            player.InventoryAndEquipment.SetTriggeredItem(this);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out PlayerWeaponManager player))
+        if (other.TryGetComponent(out PlayerView player))
         {
-            player.ResetTrigger();
+            player.InventoryAndEquipment.ResetTrigger();
         }
     }
 }
 
-public enum WeaponType
+public enum ItemType
 {
     Null = 0,
     Pistol = 1,

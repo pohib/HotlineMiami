@@ -8,6 +8,8 @@ public class PlayerController : ICharacter
     private IModel model;
     private IView view;
 
+    public IView View { get => view; }
+
     public PlayerController(IView _view)
     {
         model = new PlayerModel();

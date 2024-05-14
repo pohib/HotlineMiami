@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     Animator anim;
-    PlayerWeaponManager pwm;
+    InventoryAndEquipment pwm;
     public int wID = 0;
     bool shoot;
     void Start()
@@ -24,7 +24,7 @@ public class PlayerAnimationController : MonoBehaviour
     }
     void AttackAnim()
     {
-        shoot = pwm.shoot;
+
         if (Input.GetMouseButtonDown(0))
         {
             switch (wID)
@@ -60,7 +60,7 @@ public class PlayerAnimationController : MonoBehaviour
         }
     }
 
-    public void WeaponAnimation(WeaponType wp)
+    public void WeaponAnimation(ItemType wp)
     { 
         wID = (int)wp;
         anim.SetInteger("wps", wID);

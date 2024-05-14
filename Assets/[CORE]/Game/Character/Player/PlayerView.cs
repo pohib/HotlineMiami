@@ -9,8 +9,14 @@ namespace PLAYER
         [SerializeField] private Components components;
 
         public Components Components { get => components; }
+        public InventoryAndEquipment InventoryAndEquipment { get; private set; }
 
         Components IView.components { get { return components; } }
+
+        public void Init(InventoryAndEquipment inventory)
+        {
+            InventoryAndEquipment = inventory;
+        }
 
         public void Move(Vector3 direction)
         {
@@ -30,6 +36,6 @@ namespace PLAYER
         public float rotation_speed;
         public Transform camera;
         public PlayerAnimationController animationController;
-        public PlayerWeaponManager weaponManager;
+        public InventoryAndEquipment weaponManager;
     }
 }

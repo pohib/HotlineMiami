@@ -6,9 +6,9 @@ public class SceneItemsContainer : Singleton<SceneItemsContainer>
 {
     [SerializeField] private List<Item> ItemsInScene;
     
-    public void SetWeaponOnScene(WeaponType item, Vector3 position)
+    public void SetWeaponOnScene(ItemType item, Vector3 position)
     {
-        if (item == WeaponType.Null) return;
+        if (item == ItemType.Null) return;
 
         Item weapon = GetFreeWeapon(item, false);
 
@@ -27,11 +27,11 @@ public class SceneItemsContainer : Singleton<SceneItemsContainer>
         }
     }
 
-    private Item GetFreeWeapon(WeaponType item, bool isActive)
+    private Item GetFreeWeapon(ItemType item, bool isActive)
     {
         Item weapon = null;
         
-        if(item == WeaponType.Null)
+        if(item == ItemType.Null)
         {
             return null;
         }

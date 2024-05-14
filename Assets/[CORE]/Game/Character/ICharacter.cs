@@ -1,5 +1,4 @@
-public interface ICharacter
+public interface ICharacter: ITick
 {
     public void Init(GameManager _gameManager);
-    public void Tick();
 }

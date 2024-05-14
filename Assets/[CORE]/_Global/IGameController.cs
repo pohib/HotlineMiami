@@ -1,5 +1,4 @@
-public interface IGameController
+public interface IGameController: ITick
 {
     public void Init();
-    public void Tick();
 }

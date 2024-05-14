@@ -11,6 +11,8 @@ namespace AI
         private RayScan rayScan;
         public RayScan GetScan => rayScan;
 
+        private ItemConfig currentWeapon;
+
         public AIModel(Transform transform, Transform target)
         {
             rayScan = new RayScan(transform, target);
@@ -34,6 +36,11 @@ namespace AI
 
         public Vector3 moveDirection(Components components)
         {
+            if(currentWeapon == null)
+            {
+                currentWeapon = GameInstanceContainer.instance.itemsListConfig.GetItem(components.currentWeapon);
+            }
+
             if (!followTarget)
             {
                 if (!rayScan.CheckViewSpace())
@@ -64,7 +71,7 @@ namespace AI
                 rayScan.ResetDistance();
             }
 
-            components.agent.stoppingDistance = components.currentWeapon.distanceToAttack;
+            components.agent.stoppingDistance = currentWeapon.DistanceToAttack;
             components.agent.speed = components.runSpeed;
             checkDistance?.Invoke(rayScan.GetDistanceToTarget);
 
