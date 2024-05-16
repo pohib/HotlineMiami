@@ -36,5 +36,14 @@ public class GameManager : MonoBehaviour
         Debug.Log("Win!");
     }
 
+    public bool IsAllEnemiesDead()
+    {
+        foreach (var item in gameContainer.AIViewsEnemy)
+        {
+            if(!item.Components.characterStats.IsDead)
+                return false;
+        }
 
+        return true;
+    }
 }

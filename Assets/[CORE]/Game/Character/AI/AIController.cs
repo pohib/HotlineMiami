@@ -33,6 +33,10 @@ public class AIController : IBot
                 {
                     view.components.agent.ResetPath();
                     view.components.my_transform.gameObject.SetActive(false);
+                    if(gameManager.IsAllEnemiesDead())
+                    {
+                        gameManager.Win();
+                    }
                     /* dead animation etc.*/
                 };
                 break;

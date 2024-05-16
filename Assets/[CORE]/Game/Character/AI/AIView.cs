@@ -11,6 +11,7 @@ namespace AI
         [SerializeField] private Components components;
         
         public Action lowDistanceAction { get; set; }
+        public Components Components { get => components; }
 
         Components IView.components { get { return components; } }
 
