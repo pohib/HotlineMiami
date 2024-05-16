@@ -20,7 +20,7 @@ namespace PLAYER
 
         public void Move(Vector3 direction)
         {
-            components.controller.Move(direction * components.speed);
+            components.controller.Move(direction);
             components.my_transform.position = new Vector3(components.my_transform.position.x, 0, components.my_transform.position.z);
         }
     }
@@ -29,13 +29,12 @@ namespace PLAYER
     [System.Serializable]
     public struct Components
     {
+        public CharacterConfig config;
         public Transform my_transform;
         public Transform my_Root;
         public CharacterController controller;
-        public float speed;
-        public float rotation_speed;
         public Transform camera;
         public PlayerAnimationController animationController;
-        public InventoryAndEquipment weaponManager;
+        public CharacterStats characterStats;
     }
 }

@@ -46,6 +46,12 @@ public class SceneItemsContainer : Singleton<SceneItemsContainer>
             }
         }
 
+        if(weapon == null && item != ItemType.Null)
+        {
+            ItemConfig config = GameInstanceContainer.instance.itemsListConfig.GetItem(item);
+            weapon = Instantiate(config.prefab);
+        }
+
         return weapon;
     }
 

@@ -33,6 +33,8 @@ namespace AI
         public Transform[] path_points;
         public Transform my_transform;
         public CharacterAnimation characterAnimation;
+        public Transform rayStartPoint;
+        public CharacterStats characterStats;
     }
 
     public enum AIType

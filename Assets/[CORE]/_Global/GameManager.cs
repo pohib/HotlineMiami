@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         aIController = new GameAIController(gameContainer, this);
         aIController.Init();
         playerController = new PlayerController(gameContainer.GetPlayerView);
+        playerController.Init(this);
     }
 
     private void Update()

@@ -16,3 +16,4 @@ MonoBehaviour:
   DistanceToAttack: 8
   maxHit: 15
   icon: {fileID: 21300000, guid: eefe90aa2f2b16448bbca4c59594c4d5, type: 3}
+  prefab: {fileID: 1556122060822158449, guid: 5117885a949986947a1ed885fb4d0986, type: 3}

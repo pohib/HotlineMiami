@@ -9,4 +9,5 @@ public class ItemConfig : ScriptableObject
     public float DistanceToAttack;
     public int maxHit;
     public Sprite icon;
+    public Item prefab;
 }
