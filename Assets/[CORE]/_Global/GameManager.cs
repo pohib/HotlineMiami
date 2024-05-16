@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameContainer gameContainer;
-    [SerializeField] private GameUIContainer uIContainer;
 
     private PlayerController playerController;
     private GameAIController aIController;
 
     private void Start()
     {
-        /*uiManager = new GameUIManager(uIContainer);
-        uiManager.Init();*/
         aIController = new GameAIController(gameContainer, this);
         aIController.Init();
         playerController = new PlayerController(gameContainer.GetPlayerView);
@@ -24,7 +21,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         playerController.Tick();
-        //uiManager.Tick();
         aIController.Tick();
     }
 
