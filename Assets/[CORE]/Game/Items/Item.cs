@@ -6,8 +6,6 @@ public class Item : MonoBehaviour
 { 
     public ItemType wtype;
 
-    public ItemConfig config {  get; private set; }
-
     private void Start()
     {
         SceneItemsContainer.instance.AddToList(this);

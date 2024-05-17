@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PLAYER
 {
-    public class PlayerView : Singleton<PlayerView>, IView
+    public class PlayerView : MonoBehaviour, IView
     {
         [SerializeField] private Components components;
 

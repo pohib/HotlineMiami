@@ -7,11 +7,11 @@ public class InventoryAndEquipment : ITick
 
     private PlayerAnimationController animationController;
 
-    [SerializeField] private Item triggeredItem = null;
+    private Item triggeredItem = null;
 
-    public InventoryAndEquipment(ItemType weaponToStart)
+    public InventoryAndEquipment(ItemType weaponToStart, PlayerAnimationController animationController)
     {
-        animationController = PlayerView.instance.Components.animationController;
+        this.animationController = animationController;
         currentWeapon = weaponToStart;
     }
     

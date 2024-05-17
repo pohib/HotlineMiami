@@ -17,7 +17,7 @@ public class PlayerController : ICharacter
     {
         model = new PlayerModel();
         view = _view;
-        InventoryAndEquipment = new(view.components.config.currentWeapon);
+        InventoryAndEquipment = new(view.components.config.currentWeapon, view.components.animationController);
         view.Init(InventoryAndEquipment);
         view.components.animationController.WeaponAnimation(InventoryAndEquipment.currentWeapon);
     }

@@ -8,7 +8,6 @@ public class CharacterAnimation : MonoBehaviour
 {
     internal Animator anim;
     public int wID = 0;
-    internal bool shoot;
 
     private void Awake()
     {
