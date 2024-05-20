@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameContainer gameContainer;
-
+    [SerializeField] private TMPro.TextMeshProUGUI deathText;
+    [SerializeField] private TMPro.TextMeshProUGUI WinText;
     private PlayerController playerController;
     private GameAIController aIController;
+    private bool isGameOver = false;
 
     private void Start()
     {
@@ -20,20 +22,32 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        playerController.Tick();
-        aIController.Tick();
+        if (!isGameOver)
+        {
+            playerController.Tick();
+            aIController.Tick();
+        }
+
+        if (isGameOver && Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+            isGameOver = false;
+        }
     }
 
     public void Lose()
     {
-        SceneManager.LoadScene(0);
+        
         Debug.Log("Lose!");
+        isGameOver = true;
+        deathText.text = "¬€ œ–Œ»√–¿À»... \nR ƒÀﬂ œ≈–≈«¿œ”— ¿";
     }
 
     public void Win()
     {
-        SceneManager.LoadScene(0);
+        
         Debug.Log("Win!");
+        WinText.text = "»ƒ»   Ã¿ÿ»Õ≈...";
     }
 
     public bool IsAllEnemiesDead()
@@ -45,5 +59,9 @@ public class GameManager : MonoBehaviour
         }
 
         return true;
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

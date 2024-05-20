@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: wtype
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3766780720789961807, guid: 50c88b848b07a0b4a96749eb660d5766, type: 3}
+      propertyPath: m_Radius
+      value: 0.5637232
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766780720789961807, guid: 50c88b848b07a0b4a96749eb660d5766, type: 3}
+      propertyPath: m_Center.z
+      value: 0.1762768
+      objectReference: {fileID: 0}
     - target: {fileID: 5144663833976686635, guid: 50c88b848b07a0b4a96749eb660d5766, type: 3}
       propertyPath: wtype
       value: 1

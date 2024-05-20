@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 5
   DistanceToAttack: 1.5
-  maxHit: 10
+  maxHit: 3
   icon: {fileID: 21300000, guid: fdd4b302b9bd0994e94525a3ef5b51e2, type: 3}
   prefab: {fileID: 1556122060822158449, guid: 6f30e8e682a23f548a9cf03a47825fcd, type: 3}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b4af8717d819b4dbbb6940b206dadf, type: 3}
   m_Name: PlayerCharacterConfig
   m_EditorClassIdentifier: 
-  currentWeapon: 3
+  currentWeapon: 0
   walkSpeed: 5

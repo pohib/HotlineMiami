@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: NullConfig
   m_EditorClassIdentifier: 
   Type: 0
-  DistanceToAttack: 1.5
+  DistanceToAttack: 1.4
   maxHit: 500
   icon: {fileID: 21300000, guid: 4dbfa4199f7399047b89e0ce03aca7b6, type: 3}
+  prefab: {fileID: 0}
