@@ -17,4 +17,4 @@ MonoBehaviour:
   type: 0
   isPatrol: 1
   runSpeed: 2.4
-  defaultStopDistance: 0.2
+  defaultStopDistance: 0.1

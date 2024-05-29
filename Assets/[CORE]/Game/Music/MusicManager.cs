@@ -4,18 +4,29 @@ public class MusicManager : MonoBehaviour
 {
     public AudioClip[] musicClips;
     private AudioSource audioSource;
+    private static bool created = false;
 
-    void Start()
+    void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        PlayRandomMusic();
-        audioSource.loop = false;
+        if (!created)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            DontDestroyOnLoad(gameObject);
+            created = true;
+            PlayRandomMusic();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void PlayRandomMusic()
     {
         int randomIndex = Random.Range(0, musicClips.Length);
         audioSource.clip = musicClips[randomIndex];
+        audioSource.volume = 0.6f;
+        audioSource.loop = true; 
         audioSource.Play();
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,30 +20,29 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!isGameOver)
-        {
-            playerController.Tick();
-            aIController.Tick();
-        }
-
         if (isGameOver && Input.GetKeyDown(KeyCode.R))
         {
             RestartLevel();
             isGameOver = false;
+        }
+        else
+        {
+            playerController.Tick();
+            aIController.Tick();
         }
     }
 
     public void Lose()
     {
         
-        Debug.Log("Lose!");
+       Debug.Log("Lose!");
         isGameOver = true;
         deathText.text = "¬€ œ–Œ»√–¿À»... \nR ƒÀﬂ œ≈–≈«¿œ”— ¿";
     }
 
     public void Win()
     {
-        
+
         Debug.Log("Win!");
         WinText.text = "»ƒ»   Ã¿ÿ»Õ≈...";
     }

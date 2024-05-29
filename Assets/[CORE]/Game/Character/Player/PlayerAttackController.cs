@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttackController : CharacterAttack, ITick
@@ -18,7 +16,7 @@ public class PlayerAttackController : CharacterAttack, ITick
         Debug.Log("Is Attack");
         RaycastHit hit;
         ItemConfig item = GameInstanceContainer.instance.itemsListConfig.GetItem(equipment.currentWeapon);
-        
+
         Debug.DrawRay(components.my_Root.position, components.my_transform.TransformDirection(components.my_Root.forward) * item.DistanceToAttack, Color.yellow);
 
         if (Physics.Raycast(components.my_Root.position, components.my_transform.TransformDirection(components.my_Root.forward), out hit, item.DistanceToAttack))
@@ -33,7 +31,7 @@ public class PlayerAttackController : CharacterAttack, ITick
 
     public void Tick()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             SetAttack();
         }
